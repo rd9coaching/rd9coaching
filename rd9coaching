@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PERSONAL TRAINER & Hyrox Athlete</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Stripe.js for future payment integration -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobile-menu');
+      nav.classList.toggle('hidden');
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="p-6 max-w-6xl mx-auto">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="F678960E-34EA-4269-B944-5CB3C9572CE6.png" alt="Logo RD9COACHING" class="w-12 h-12 rounded-full">
+        <h1 class="text-xl font-bold">RD9COACHING</h1>
+      </div>
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-gray-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="mt-4 md:mt-0 md:flex md:space-x-4 hidden md:block text-center md:text-left">
+      <a href="#accueil" class="block py-2 text-gray-600 hover:text-black">Accueil</a>
+      <a href="#about" class="block py-2 text-gray-600 hover:text-black">About Me</a>
+      <a href="#tarifs" class="block py-2 text-gray-600 hover:text-black">Tarifs</a>
+      <a href="#questionnaire" class="block py-2 text-gray-600 hover:text-black">Questionnaire</a>
+      <a href="#contact" class="block py-2 text-gray-600 hover:text-black">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="accueil" class="text-center py-20 px-4 bg-white">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Personal Trainer & Hyrox Athlète</h2>
+    <p class="text-lg text-gray-600 mb-6">Transforme ton corps et ton esprit avec un accompagnement sur mesure</p>
+    <div class="flex justify-center gap-6 flex-wrap">
+      <img src="14853_20250420_080628_472354972_socialmedia.jpg" alt="Coach en action 1" class="rounded-2xl shadow-lg w-64 h-auto">
+      <img src="14853_20250420_085858_472585736_socialmedia.jpg" alt="Coach en action 2" class="rounded-2xl shadow-lg w-64 h-auto">
+    </div>
+    <div class="mt-8">
+      <a href="#questionnaire" class="inline-block bg-black text-white px-6 py-3 rounded-full shadow hover:bg-gray-800 transition">Me contacter</a>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="max-w-4xl mx-auto py-16 px-4 bg-gray-50">
+    <h3 class="text-3xl font-bold text-center mb-8">About Me</h3>
+    <div class="space-y-4 text-justify leading-relaxed">
+      <!-- About content unchanged -->
+      <p><strong>ROMAIN DEGIOANNI</strong>, ATHLÈTE & COACH SPORTIF SPÉCIALISÉ DANS LE FITNESS, LA MUSCULATION ET LE DÉVELOPPEMENT D’ATHLÈTES HYBRIDES.</p>
+      <p>EN TANT QUE COACH SPORTIF DEPUIS 2017, J’AI ACQUIS UNE EXPÉRIENCE DANS PLUSIEURS DOMAINES DU FITNESS : LICENCE STAPS, COACHING PRIVÉ ET EN ENTREPRISES, RÉADAPTATION À L’EFFORT DANS UN CENTRE DE RÉÉDUCATION, SPÉCIALISÉ EN COACHING DE FEMMES ENCEINTES ET POST PARTUM, CONSEILLER EN NUTRITION ADAPTÉE À LA PRATIQUE SPORTIVE.</p>
+      <p>J’AI RAPIDEMENT DÉVELOPPÉ MA CLIENTÈLE EN PERSONAL TRAINING EN OFFRANT UN SERVICE DE QUALITÉ SUPÉRIEURE AUX CLIENTS QUE JE COACHAIS. J’AI ENSUITE DÉCIDÉ DE ME DIGITALISER POUR POUVOIR ACCOMPAGNER LES GENS AUX 4 COINS DU MONDE, AINSI QUE DES PROGRAMMES NUMÉRIQUES DE RUNNING ET FITNESS POUR TOUS.</p>
+      <p>AU FIL DES ANNÉES, JE ME SUIS RAPPROCHÉ DES SPORTS D’ENDURANCE EN PASSANT DU FOOTBALL AU CROSSFIT, À LA COURSE À PIED PUIS À L’HYROX. J’AI FINI PAR TROUVER UN ÉQUILIBRE EN DÉVELOPPANT DES QUALITÉS « HYBRIDES ». MON OBJECTIF EST D’AMÉLIORER LES CAPACITÉS CARDIOVASCULAIRES ET DE FORCE DES PERSONNES QUE J’ENTRAÎNE.</p>
+      <p>D’UN POINT DE VUE PERSONNEL, JE M’ÉPANOUIS ACTUELLEMENT ENTRE LA COURSE À PIED, LE TRAIL, LA MUSCULATION ET L’HYROX, UNE DISCIPLINE CRÉÉE EN 2017 QUI DÉFINIT AU MIEUX L’ASPECT HYBRIDE DE L’ENTRAÎNEMENT. JE PRÔNE LA COMMUNICATION ET L’ÉCHANGE AVEC MES ATHLÈTES. SI VOUS SOUHAITEZ EN SAVOIR PLUS SUR COMMENT NOUS POURRIONS TRAVAILLER ENSEMBLE, N’HÉSITEZ PAS À M’ENVOYER UN MESSAGE.</p>
+    </div>
+  </section>
+
+  <!-- Tarifs Section -->
+  <section id="tarifs" class="max-w-4xl mx-auto py-16 px-4 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-8">Tarifs</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="p-6 border rounded-2xl shadow bg-gray-50">
+        <h4 class="text-xl font-semibold mb-2">Coaching individuel 1:1 à domicile</h4>
+        <p class="text-gray-600 mb-2">Durée : 1h</p>
+        <p class="text-gray-800 font-bold mb-4">60 €</p>
+        <!-- No payment link for in-person sessions -->
+      </div>
+      <div class="p-6 border rounded-2xl shadow bg-gray-50">
+        <h4 class="text-xl font-semibold mb-2">Small group training (max 4 pers)</h4>
+        <p class="text-gray-600 mb-2">Durée : 1h</p>
+        <p class="text-gray-800 font-bold mb-4">20 € / personne</p>
+      </div>
+      <div class="p-6 border rounded-2xl shadow bg-gray-50">
+        <h4 class="text-xl font-semibold mb-2">Coaching en ligne 1:1 (visio)</h4>
+        <p class="text-gray-600 mb-2">Séance personnalisée en visioconférence</p>
+        <p class="text-gray-800 font-bold mb-4">40 €</p>
+      </div>
+      <!-- Online programs with payment links -->
+      <div class="p-6 border rounded-2xl shadow bg-gray-50">
+        <h4 class="text-xl font-semibold mb-2">Programme running 5 ou 10 kms</h4>
+        <p class="text-gray-600 mb-2">Plan de 5 semaines pour booster vitesse & endurance</p>
+        <p class="text-gray-800 font-bold mb-4">25 €</p>
+        <a href="https://buy.stripe.com/test_running" target="_blank" class="inline-block bg-black text-white px-4 py-2 rounded-full shadow hover:bg-gray-800 transition">Acheter</a>
+      </div>
+      <div class="p-6 border rounded-2xl shadow bg-gray-50">
+        <h4 class="text-xl font-semibold mb-2">Programme fessiers & abdos</h4>
+        <p class="text-gray-600 mb-2">4 semaines – travail ciblé et progressif</p>
+        <p class="text-gray-800 font-bold mb-4">29,90 €</p>
+        <a href="https://buy.stripe.com/test_fitness" target="_blank" class="inline-block bg-black text-white px-4 py-2 rounded-full shadow hover:bg-gray-800 transition">Acheter</a>
+      </div>
+      <div class="p-6 border rounded-2xl shadow bg-gray-50">
+        <h4 class="text-xl font-semibold mb-2">Pack de séances</h4>
+        <p class="text-gray-600 mb-2">Sur devis selon vos besoins</p>
+        <p class="text-gray-800 font-bold">Sur demande</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Questionnaire Section -->
+  <section id="questionnaire" class="max-w-3xl mx-auto py-16 px-4 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-8">Questionnaire Client</h3>
+    <!-- Replace action with actual endpoint or service (e.g., Google Forms, Netlify Forms) -->
+    <form class="space-y-6" action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="text" name="prenom" placeholder="Prénom" class="w-full p-3 border rounded-xl" required />
+      <input type="text" name="nom" placeholder="Nom" class="w-full p-3 border rounded-xl" required />
+      <input type="email" name="email" placeholder="Email" class="w-full p-3 border rounded-xl" required />
+      <input type="text" name="instagram" placeholder="Instagram" class="w-full p-3 border rounded-xl" />
+      <input type="text" name="objectif_principal" placeholder="Objectif principal (ex : perte de poids)" class="w-full p-3 border rounded-xl" required />
+      <input type="text" name="objectifs_trois" placeholder="3 objectifs santé/remise en forme" class="w-full p-3 border rounded-xl" />
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <input type="number" name="age" placeholder="Âge" class="w-full p-3 border rounded-xl" />
+        <input type="number" name="poids" placeholder="Poids (kg)" class="w-full p-3 border rounded-xl" />
+        <input type="number" name="taille" placeholder="Taille (cm)" class="w-full p-3 border rounded-xl" />
+      </div>
+      <select name="coaching_experience" class="w-full p-3 border rounded-xl">
+        <option value="">As-tu déjà été coaché(e) ?</option>
+        <option value="oui">Oui</option>
+        <option value="non">Non</option>
+      </select>
+      <select name="lieu_entrainement" class="w-full p-3 border rounded-xl">
+        <option value="">T'entraînes-tu en salle ou chez toi ?</option>
+        <option value="salle">En salle</option>
+        <option value
